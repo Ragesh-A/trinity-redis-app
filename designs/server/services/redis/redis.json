@@ -1,0 +1,682 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "type": "tab",
+        "createdDate": "2024-02-27T06:24:09.583Z",
+        "label": "redis",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "redis",
+        "relativeParentPath": "redis"
+    },
+    {
+        "id": "sd_aqActn6PayOx9ZDQ",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/redis/get",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 40,
+        "y": 120,
+        "wires": [
+            [
+                "sd_Np9ResJjvH7Nuh4l"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "redis",
+        "functionName": "sd_aqActn6PayOx9ZDQ"
+    },
+    {
+        "id": "sd_Np9ResJjvH7Nuh4l",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.key = bh.input.body.key\nbh.local.value = 'dell'\n",
+        "functionName": "sd_Np9ResJjvH7Nuh4l",
+        "category": "Function",
+        "x": 165,
+        "y": 120,
+        "wires": [
+            [
+                "sd_MhjBzjyD6o8YK5g9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_aWyTbBGL4hyE2Dih",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.result,\"Resulttttttt\")",
+        "functionName": "sd_aWyTbBGL4hyE2Dih",
+        "category": "Function",
+        "x": 405,
+        "y": 120,
+        "wires": [
+            [
+                "sd_U7eb2NmnoabZ0T3P"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_U7eb2NmnoabZ0T3P",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_U7eb2NmnoabZ0T3P",
+        "category": "HTTP",
+        "x": 560,
+        "y": 120,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_MhjBzjyD6o8YK5g9",
+        "type": "cf6529b8-ff53-d8f6-7ed3-21afd834adda",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "redis db",
+        "redisConfig": "sd_B6hyTS5rzRtd9MNH",
+        "operation": "get",
+        "key": "bh.local.key",
+        "value": "bh.local.value",
+        "resultMapping": "bh.local.result",
+        "functionName": "redisDb",
+        "category": "Redis",
+        "x": 280,
+        "y": 120,
+        "wires": [
+            [
+                "sd_aWyTbBGL4hyE2Dih"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "key": {
+                "type": "bh.local",
+                "value": "key",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            },
+            "value": {
+                "type": "bh.local",
+                "value": "value",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {
+            "value": true
+        },
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_HAlv7s1BJDQ7jXn0",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/redis/set",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 45,
+        "y": 260,
+        "wires": [
+            [
+                "sd_SfX6GnFFvHvFCDVG"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "redis",
+        "functionName": "sd_HAlv7s1BJDQ7jXn0"
+    },
+    {
+        "id": "sd_SfX6GnFFvHvFCDVG",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.key = bh.input.body.key\nbh.local.value = bh.input.body.value\n\nconsole.log(bh.input)",
+        "functionName": "sd_SfX6GnFFvHvFCDVG",
+        "category": "Function",
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "sd_gJiCCNm38zhJcJIx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_Wr5nARtmonBESCDc",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.result,\"Resulttttttt\")",
+        "functionName": "sd_Wr5nARtmonBESCDc",
+        "category": "Function",
+        "x": 410,
+        "y": 260,
+        "wires": [
+            [
+                "sd_ZGQIkt9FiplBNLo6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_ZGQIkt9FiplBNLo6",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_ZGQIkt9FiplBNLo6",
+        "category": "HTTP",
+        "x": 565,
+        "y": 260,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_gJiCCNm38zhJcJIx",
+        "type": "cf6529b8-ff53-d8f6-7ed3-21afd834adda",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "redis set db",
+        "redisConfig": "sd_B6hyTS5rzRtd9MNH",
+        "operation": "set",
+        "key": "bh.local.key",
+        "value": "bh.local.value",
+        "resultMapping": "bh.local.result",
+        "functionName": "redisSetDb",
+        "category": "Redis",
+        "x": 285,
+        "y": 260,
+        "wires": [
+            [
+                "sd_Wr5nARtmonBESCDc"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "key": {
+                "type": "bh.local",
+                "value": "key",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            },
+            "value": {
+                "type": "bh.local",
+                "value": "value",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_99vJ35JjFrvzGO4y",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/test",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 420,
+        "wires": [
+            [
+                "sd_l3owUrUuQVZlwEY3"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "redis",
+        "functionName": "sd_99vJ35JjFrvzGO4y"
+    },
+    {
+        "id": "sd_JOhoaiMGfi8bN7vI",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "redischeck",
+        "script": "const redis = require('redis')\nconst { Schema, Repository } = require('redis-om')\n\nconst { createClient } = require('redis');\nconsole.log(createClient,\"createClient\")\nconst client = await createClient({\n  url: 'redis://:redis_password@4.247.25.65:6379'\n})\n  .on('error', err => console.log('Redis Client Error', err))\n  .connect();\n\nawait client.set('key', 'value');\nconst value = await client.get('key');\nconsole.log(value,\"value\")\n// await client.disconnect();\n\n// bh.local.redis.redis.json.set('user2', '$', {\n//     name: \"mi\",\n//     age: 5\n// })\n\n// const albumSchema = new Schema('album', {\n//     artist: { type: 'string' },\n//     title: { type: 'string' },\n//     year: { type: 'number' },\n//     genres: { type: 'string[]' },\n//     outOfPublication: { type: 'boolean' }\n// }, {\n//     dataStructure: 'HASH'\n// })\n\n// import { Repository } from 'redis-om'\n\n// const albumRepository = new Repository(albumSchema, redis)\n\n// console.log(bh.local.redis,\"bh.local.redis\")\n// console.log(bh.local.redis.redis,\"bh.local.redis.redis\")\n\n\nconsole.log(Schema, \"Schema\")\nconsole.log(Repository, \"Repository\")\n\n// const personSchema = new Schema('person', {\n//     name: { type: 'string' },\n//     age: { type: 'number' }\n// }, {\n//     dataStructure: 'JSON'\n// })\n\nconst schema = new Schema('person', {\n  name: { type: 'string' },\n  age: { type: 'number' }\n})\n\nconsole.log(schema, \"personSchema\")\n\nlet p = {\n    name: \"mi\",\n    age: 5\n}\nconst personRepository = new Repository(schema, client)\n\nconsole.log(personRepository, \"personRepository\")\n\nawait personRepository.save(p)\n\nconst user = await personRepository.search()\n    .where('name').equals('mi')\n    .return.all()\n//   .and('title').matches('butterfly')\n//   .and('year').is.greaterThan(2000)\n\n\n\n\nbh.local.result = {\n    redis: bh.local.redis,\n    user: user,\n}\n    // user2: await bh.local.redis.redis.json.get('user2', '$'),\n    // user2age: await bh.local.redis.redis.json.get('user2', '$.age')",
+        "functionName": "redischeck",
+        "category": "Function",
+        "x": 265,
+        "y": 600,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "redis"
+    },
+    {
+        "id": "sd_dueOSf0z879FDKeA",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_dueOSf0z879FDKeA",
+        "category": "HTTP",
+        "x": 785,
+        "y": 420,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_l3owUrUuQVZlwEY3",
+        "type": "cf6529b8-ff53-d8f6-7ed3-21afd834addq",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "redisConfig": "sd_3Sl10QmXLUOy6tXy",
+        "operation": "getConnection",
+        "resultMapping": "bh.local.redis",
+        "functionName": "sd_l3owUrUuQVZlwEY3",
+        "category": "Redis",
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "sd_w0ZcjOOZDwZ2WNyc"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "redis",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_w0ZcjOOZDwZ2WNyc",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "basic set get",
+        "script": "const { redis } = bh.local.redis;\n\n// SEARCH \nconst data = await redis.ft.search\n\n// SET \nconst data1 = await redis.json.set('name', '$', { name: \"abu\" })\n\n// GET \nconst data2 = await redis.json.get(\"name\", '$')\n\n\n\nconsole.log(\"this is seatch data\", data)\nconsole.log(\"this is set data\", data1)\nconsole.log(\"this is get data\", data2)",
+        "functionName": "basicSetGet",
+        "category": "Function",
+        "x": 265,
+        "y": 420,
+        "wires": [
+            [
+                "sd_zwOCAznhcyC9POAx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_ShvxxVJT0G0CUSOR",
+        "type": "ServiceVariables",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_ShvxxVJT0G0CUSOR",
+        "category": "Function",
+        "x": 680,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "redis"
+    },
+    {
+        "id": "sd_zwOCAznhcyC9POAx",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "schema and index",
+        "script": "const { redis: client} = bh.local.redis;\n\nconst schema = {\n  '$.brand': {\n    type: 'TEXT',\n    SORTABLE: true,\n    AS: 'brand'\n  },\n  '$.model': {\n    type: 'TEXT',\n    AS: 'model'\n  },\n  '$.description': {\n    type: 'TEXT',\n    AS: 'description'\n  },\n  '$.price': {\n    type: 'NUMERIC',\n    AS: 'price'\n  }\n};\n\n// creating index the name of schema is idx:bicycle used for the query\ntry {\n  await client.ft.create('idx:bicycle', schema, {\n  ON: 'JSON',\n  PREFIX: 'bicycle:'\n});\n\n} catch (e) {\n  console.log(e)\n}\n",
+        "functionName": "schemaAndIndex",
+        "category": "Function",
+        "x": 385,
+        "y": 420,
+        "wires": [
+            [
+                "sd_CtwOMUlk2TXSAj9D"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_CtwOMUlk2TXSAj9D",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "searchRedis",
+        "script": "const { redis: client } = bh.local.redis\n\nlet result = await client.ft.search(\n    'idx:bicycle', // schema to search\n    '@brand:\"Velorim\"', // condition to search eg: @feild: \"value\"\n    { // options\n        LIMIT: {\n            from: 0,\n            size: 10\n        },\n        PROJECTION: [\"price\"]\n    });\n\nbh.local.result = result;",
+        "functionName": "searchRedis",
+        "category": "Function",
+        "x": 665,
+        "y": 420,
+        "wires": [
+            [
+                "sd_dueOSf0z879FDKeA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "redis",
+        "generated": true
+    },
+    {
+        "id": "sd_6fRxEhoE3kppDbHA",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_AtPHFvjjVWsoSopN",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "add data into redis",
+        "script": " const data = [\n    {\n        \"brand\": \"Velorim\",\n        \"model\": \"Jigger\",\n        \"price\": 270,\n        \"description\": \"Small and powerful, the Jigger is the best ride for the smallest of tikes! This is the tiniest kids’ pedal bike on the market available without a coaster brake, the Jigger is the vehicle of choice for the rare tenacious little rider raring to go.\"\n    },\n    {\n        \"brand\": \"Acme\",\n        \"model\": \"Zoomer\",\n        \"price\": 180,\n        \"description\": \"The Zoomer is perfect for adventurous kids who love to explore. With its durable frame and comfortable seat, it's ready to take on any terrain. Let your child's imagination run wild with the Zoomer!\"\n    },\n    {\n        \"brand\": \"Speedster\",\n        \"model\": \"TurboX\",\n        \"price\": 320,\n        \"description\": \"Experience the thrill of speed with the TurboX from Speedster. Designed for young daredevils, this bike combines style and performance. Conquer the streets and leave your friends in the dust with the TurboX!\"\n    },\n    {\n        \"brand\": \"AdventureWorks\",\n        \"model\": \"Explorer\",\n        \"price\": 250,\n        \"description\": \"Set off on exciting adventures with the Explorer bike from AdventureWorks. Its rugged design and versatile features make it the perfect companion for young explorers. Discover new paths and make memories with the Explorer!\"\n    },\n    {\n        \"brand\": \"PedalPro\",\n        \"model\": \"Cruiser\",\n        \"price\": 200,\n        \"description\": \"Cruise in style with the PedalPro Cruiser. This classic bike combines retro charm with modern comfort. Whether you're riding through the city or along the beach, the Cruiser ensures a smooth and enjoyable journey!\"\n    }\n]\n\nconst { redis: client } = bh.local.redis;\n\n// data.forEach(async (x, i) => {\n//     await client.json.set(`bicycle:${i}-${Math.random()}`, '$', x)\n// })\n\nawait client.json.set(`bicycle:${i}-${Math.random()}`, '$', data)",
+        "functionName": "addDataIntoRedis",
+        "category": "Function",
+        "x": 525,
+        "y": 540,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "redis"
+    }
+]

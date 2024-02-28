@@ -1,0 +1,14 @@
+{
+    "displayName": "trinity-redis-app",
+    "appName": "trinity-redis-app",
+    "description": "redis connection app",
+    "lastModified": "2024-02-27T05:41:24.335Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2024-02-27T05:37:58.095Z",
+    "analyticsId": "3a0b229b-d06a-f896-6cc6-a44d9450beef",
+    "createdStudioVersion": "9.2.0",
+    "isCorrupt": false
+}

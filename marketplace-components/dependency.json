@@ -1,0 +1,1185 @@
+{
+    "packages": [
+        {
+            "name": "neutrinos-all-default-nodes-plugin",
+            "default": true,
+            "visible": false,
+            "dependencies": [
+                {
+                    "name": "ndefault-all-nodes",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            "ChildProcess",
+                            "CORS",
+                            "DBConfig",
+                            "GlobalMiddlewareEnd",
+                            "GlobalMiddlewareStart",
+                            "GlobalNext",
+                            "HttpIn",
+                            "HttpOut",
+                            "HttpProxyConfig",
+                            "ServerHttpRequest",
+                            "MiddlewareEnd",
+                            "MiddlewareStart",
+                            "Next",
+                            "RouteMiddlewareEnd",
+                            "RouteMiddlewareStart",
+                            "ServerLog",
+                            "TLSConfig",
+                            "Processor"
+                        ],
+                        "common": [
+                            "Catch",
+                            "Comments",
+                            "Script",
+                            "Unknown"
+                        ],
+                        "pages": [
+                            "PageCallService",
+                            "PageStart",
+                            "PageSwitch",
+                            "ViewPicker",
+                            "PageVariables",
+                            "PageServiceVariables",
+                            "PageAsync"
+                        ],
+                        "client-server": [
+                            "ServiceVariables",
+                            "CallService",
+                            "Start",
+                            "Switch",
+                            "Async"
+                        ],
+                        "client-pages": [
+                            "Environment",
+                            "HttpRequest",
+                            "Log",
+                            "Navigation",
+                            "SnackBar",
+                            "Storage",
+                            "CallSSDApi",
+                            "UseDependency",
+                            "neutrinos-ngzone"
+                        ],
+                        "client": [
+                            "CanActivate",
+                            "CanDeactivate",
+                            "Resolve"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-active-directory-plugin",
+            "description": "All dependencies to do active directory operations.",
+            "displayName": "Active Directory",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-active-directory",
+                    "packageType": "studio-nodes",
+                    "displayName": "Active Directory Node",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "ActiveDirectory",
+                                "dependencies": [
+                                    {
+                                        "name": "activedirectory",
+                                        "version": "0.7.2"
+                                    },
+                                    {
+                                        "name": "http-status-codes",
+                                        "version": "2.1.4"
+                                    }
+                                ]
+                            },
+                            "ADConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-data-model",
+            "description": "DataModel Plugin",
+            "displayName": "DataModel Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-datamodel",
+                    "packageType": "studio-nodes",
+                    "displayName": "Data Model",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "insert"
+                            },
+                            {
+                                "name": "update"
+                            },
+                            {
+                                "name": "remove"
+                            },
+                            {
+                                "name": "find"
+                            },
+                            {
+                                "name": "validate"
+                            },
+                            {
+                                "name": "SetDmError"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-amqp-plugin",
+            "description": "AMQP Plugin",
+            "displayName": "AMQP Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-amqp-producer",
+                    "packageType": "studio-nodes",
+                    "displayName": "AMPQ Producer",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "AMQPProducer",
+                                "dependencies": [
+                                    {
+                                        "name": "amqplib",
+                                        "version": "0.10.0"
+                                    }
+                                ],
+                                "devDependencies": [
+                                    {
+                                        "name": "@types/amqplib",
+                                        "version": "0.5.17"
+                                    }
+                                ]
+                            },
+                            "AMQPConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-csv-plugin",
+            "description": "CSV Plugin",
+            "displayName": "CSV Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-csv",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "CSV",
+                                "dependencies": [
+                                    {
+                                        "name": "csv-parse",
+                                        "version": "5.3.0"
+                                    },
+                                    {
+                                        "name": "csv-stringify",
+                                        "version": "6.2.0"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-file-plugin",
+            "description": "File Plugin",
+            "displayName": "File Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-file",
+                    "packageType": "studio-nodes",
+                    "displayName": "File In/Out",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "FileIn",
+                                "dependencies": [
+                                    {
+                                        "name": "iconv-lite",
+                                        "version": "0.6.3"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "FileOut"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-json-plugin",
+            "description": "JSON Parser",
+            "displayName": "JSON Parser",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-json",
+                    "packageType": "studio-nodes",
+                    "displayName": "JSON",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "JSONConverter"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-mongodb-plugin",
+            "description": "MongoDB",
+            "displayName": "MongoDB",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-mongodb",
+                    "packageType": "studio-nodes",
+                    "displayName": "MongoDB",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "Mongodb",
+                                "dependencies": [
+                                    {
+                                        "name": "mongodb",
+                                        "version": "4.8.0"
+                                    },
+                                    {
+                                        "name": "bson",
+                                        "version": "4.6.5"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-session-plugin",
+            "description": "Session Management Plugin",
+            "displayName": "Session Management Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-session",
+                    "packageType": "studio-nodes",
+                    "displayName": "Session",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "Session"
+                            },
+                            {
+                                "name": "GlobalSession"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-mongo-session-plugin",
+            "description": "Mongo Session Plugin",
+            "displayName": "Mongo Session Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-mongo-session",
+                    "packageType": "studio-nodes",
+                    "displayName": "Mongo Session",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "GlobalMongoSession",
+                                "dependencies": [
+                                    {
+                                        "name": "mongodb",
+                                        "version": "4.8.0"
+                                    },
+                                    {
+                                        "name": "bson",
+                                        "version": "4.6.5"
+                                    },
+                                    {
+                                        "name": "neutrinos-mongodb-session-store",
+                                        "version": "0.0.2-beta.1"
+                                    },
+                                    {
+                                        "name": "@types/express-session",
+                                        "version": "1.17.5"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-sql-plugin",
+            "description": "SQL Plugin",
+            "displayName": "SQL Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-sql",
+                    "packageType": "studio-nodes",
+                    "displayName": "SQL",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "ExecuteSql",
+                                "dependencies": [
+                                    {
+                                        "name": "typeorm",
+                                        "version": "0.3.11"
+                                    },
+                                    {
+                                        "name": "typeorm-static",
+                                        "version": "1.1.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-xml-plugin",
+            "description": "XML Plugin",
+            "displayName": "XML Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-xml",
+                    "packageType": "studio-nodes",
+                    "displayName": "XML",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "XML",
+                                "dependencies": [
+                                    {
+                                        "name": "xml2js",
+                                        "version": "0.4.23"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-yml-plugin",
+            "description": "YML Plugin",
+            "displayName": "YML Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-yml",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "YML",
+                                "dependencies": [
+                                    {
+                                        "name": "js-yaml",
+                                        "version": "4.1.0"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-email-plugin",
+            "description": "Email Plugin",
+            "displayName": "Email Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-email",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "EmailOut",
+                                "dependencies": [
+                                    {
+                                        "name": "poplib",
+                                        "version": "0.1.7"
+                                    },
+                                    {
+                                        "name": "nodemailer",
+                                        "version": "6.7.7"
+                                    },
+                                    {
+                                        "name": "mailparser",
+                                        "version": "3.5.0"
+                                    },
+                                    {
+                                        "name": "imap",
+                                        "version": "0.8.19"
+                                    }
+                                ]
+                            },
+                            "EmailOutConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-callsoap-plugin",
+            "description": "Call Soap Plugin",
+            "displayName": "Call Soap Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-call-soap",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "Soap",
+                                "dependencies": [
+                                    {
+                                        "name": "strong-soap",
+                                        "version": "3.4.0"
+                                    }
+                                ]
+                            },
+                            "SoapConfig",
+                            "BasicAuthConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-pub-sub",
+            "description": "Pub Sub for server",
+            "displayName": "Pub Sub for server",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-pub-sub",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "listen",
+                                "dependencies": []
+                            },
+                            {
+                                "name": "emit",
+                                "dependencies": []
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "_id": "60cc70a6891d1aa6573cbaf2",
+            "name": "neutrinos-redis",
+            "averageRating": 0,
+            "description": "Redis client connector",
+            "devid": "94d3ec7b-eaf8-e2d8-3d49-d20c003b4938",
+            "displayName": "Redis",
+            "lastUpdated": "2023-02-16T10:00:33.419Z",
+            "numberOfDownloads": 0,
+            "packageType": [
+                "studio-nodes"
+            ],
+            "platformSupportVersion": "9.1.0",
+            "pluginImage": "neutrinos-redis-1621923801232.png",
+            "publisher": "Neutrinos",
+            "uploadedDate": "2021-06-18T10:08:38.523Z",
+            "username": "david.kirubakaran@neutrinos.co",
+            "version": "2.0.1",
+            "versions": {
+                "1.0.0": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-redis",
+                            "displayName": "Redis",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.0",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "6189ff69-47a2-54d4-9dbc-f0faf16be9db",
+                                        "displayName": "Redis Config",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "3.1.2"
+                                            },
+                                            {
+                                                "name": "connect-redis",
+                                                "version": "5.2.0"
+                                            },
+                                            {
+                                                "name": "express-session",
+                                                "version": "1.17.1"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "cf6529b8-ff53-d8f6-7ed3-21afd834adda",
+                                        "displayName": "Redis Operation",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "3.1.2"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "457e59aa-6aee-285c-0168-68e5a2c09f95",
+                                        "displayName": "Redis Subscribe"
+                                    },
+                                    {
+                                        "name": "7fb78023-bae5-1aaa-c077-ad6e3e22d4aa",
+                                        "displayName": "Redis Publish"
+                                    },
+                                    {
+                                        "name": "de94c257-3623-8a27-51d9-eada5d990e2c",
+                                        "displayName": "Redis Session"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "express-session": "1.17.1",
+                                "connect-redis": "5.2.0",
+                                "redis": "3.1.2"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "7.8.0"
+                    },
+                    "metadata": {
+                        "devid": "94d3ec7b-eaf8-e2d8-3d49-d20c003b4938",
+                        "name": "neutrinos-redis",
+                        "displayName": "Redis",
+                        "version": "1.0.0",
+                        "username": "david.kirubakaran@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "7.8.0"
+                        },
+                        "description": "Redis client connector",
+                        "pluginImage": "neutrinos-redis-1621923801232.png"
+                    },
+                    "version": "1.0.0"
+                },
+                "1.0.1": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-redis",
+                            "displayName": "Redis",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.1",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "6189ff69-47a2-54d4-9dbc-f0faf16be9db",
+                                        "displayName": "Redis Config",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "3.1.2"
+                                            },
+                                            {
+                                                "name": "connect-redis",
+                                                "version": "5.2.0"
+                                            },
+                                            {
+                                                "name": "express-session",
+                                                "version": "1.17.1"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "cf6529b8-ff53-d8f6-7ed3-21afd834adda",
+                                        "displayName": "Redis Operation",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "3.1.2"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "457e59aa-6aee-285c-0168-68e5a2c09f95",
+                                        "displayName": "Redis Subscribe"
+                                    },
+                                    {
+                                        "name": "7fb78023-bae5-1aaa-c077-ad6e3e22d4aa",
+                                        "displayName": "Redis Publish"
+                                    },
+                                    {
+                                        "name": "de94c257-3623-8a27-51d9-eada5d990e2c",
+                                        "displayName": "Redis Session"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "express-session": "1.17.1",
+                                "connect-redis": "5.2.0",
+                                "redis": "3.1.2"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "7.8.0"
+                    },
+                    "metadata": {
+                        "name": "neutrinos-redis",
+                        "displayName": "Redis",
+                        "version": "1.0.1",
+                        "username": "david.kirubakaran@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "7.8.0"
+                        },
+                        "description": "Redis client connector",
+                        "pluginImage": "neutrinos-redis-1621923801232.png"
+                    },
+                    "version": "1.0.1"
+                },
+                "1.0.2": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-redis",
+                            "displayName": "Redis",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.2",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "6189ff69-47a2-54d4-9dbc-f0faf16be9db",
+                                        "displayName": "Redis Config",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "3.1.2"
+                                            },
+                                            {
+                                                "name": "connect-redis",
+                                                "version": "5.2.0"
+                                            },
+                                            {
+                                                "name": "express-session",
+                                                "version": "1.17.1"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "cf6529b8-ff53-d8f6-7ed3-21afd834adda",
+                                        "displayName": "Redis Operation",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "3.1.2"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "457e59aa-6aee-285c-0168-68e5a2c09f95",
+                                        "displayName": "Redis Subscribe"
+                                    },
+                                    {
+                                        "name": "7fb78023-bae5-1aaa-c077-ad6e3e22d4aa",
+                                        "displayName": "Redis Publish"
+                                    },
+                                    {
+                                        "name": "de94c257-3623-8a27-51d9-eada5d990e2c",
+                                        "displayName": "Redis Session"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "express-session": "1.17.1",
+                                "connect-redis": "5.2.0",
+                                "redis": "3.1.2"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "7.8.0"
+                    },
+                    "metadata": {
+                        "devid": "94d3ec7b-eaf8-e2d8-3d49-d20c003b4938",
+                        "name": "neutrinos-redis",
+                        "displayName": "Redis",
+                        "version": "1.0.2",
+                        "username": "david.kirubakaran@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "7.8.0"
+                        },
+                        "description": "Redis client connector",
+                        "pluginImage": "neutrinos-redis-1621923801232.png"
+                    },
+                    "version": "1.0.2"
+                },
+                "1.0.3": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-redis",
+                            "displayName": "Redis",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.3",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "6189ff69-47a2-54d4-9dbc-f0faf16be9db",
+                                        "displayName": "Redis Config",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "4.0.0"
+                                            },
+                                            {
+                                                "name": "connect-redis",
+                                                "version": "6.0.0"
+                                            },
+                                            {
+                                                "name": "express-session",
+                                                "version": "1.17.2"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "cf6529b8-ff53-d8f6-7ed3-21afd834adda",
+                                        "displayName": "Redis Operation",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "4.0.0"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "457e59aa-6aee-285c-0168-68e5a2c09f95",
+                                        "displayName": "Redis Subscribe"
+                                    },
+                                    {
+                                        "name": "7fb78023-bae5-1aaa-c077-ad6e3e22d4aa",
+                                        "displayName": "Redis Publish"
+                                    },
+                                    {
+                                        "name": "de94c257-3623-8a27-51d9-eada5d990e2c",
+                                        "displayName": "Redis Session"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "express-session": "1.17.2",
+                                "connect-redis": "6.0.0",
+                                "redis": "4.0.0"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "7.8.0"
+                    },
+                    "metadata": {
+                        "devid": "94d3ec7b-eaf8-e2d8-3d49-d20c003b4938",
+                        "name": "neutrinos-redis",
+                        "displayName": "Redis",
+                        "version": "1.0.3",
+                        "username": "david.kirubakaran@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "7.8.0"
+                        },
+                        "description": "Redis client connector",
+                        "pluginImage": "neutrinos-redis-1621923801232.png"
+                    },
+                    "version": "1.0.3"
+                },
+                "1.0.4": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-redis",
+                            "displayName": "Redis",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.4",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "6189ff69-47a2-54d4-9dbc-f0faf16be9db",
+                                        "displayName": "Redis Config",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "3.1.2"
+                                            },
+                                            {
+                                                "name": "connect-redis",
+                                                "version": "5.2.0"
+                                            },
+                                            {
+                                                "name": "express-session",
+                                                "version": "1.17.1"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "cf6529b8-ff53-d8f6-7ed3-21afd834adda",
+                                        "displayName": "Redis Operation",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "3.1.2"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "457e59aa-6aee-285c-0168-68e5a2c09f95",
+                                        "displayName": "Redis Subscribe"
+                                    },
+                                    {
+                                        "name": "7fb78023-bae5-1aaa-c077-ad6e3e22d4aa",
+                                        "displayName": "Redis Publish"
+                                    },
+                                    {
+                                        "name": "de94c257-3623-8a27-51d9-eada5d990e2c",
+                                        "displayName": "Redis Session"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "express-session": "1.17.1",
+                                "connect-redis": "5.2.0",
+                                "redis": "3.1.2"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "7.8.0"
+                    },
+                    "metadata": {
+                        "devid": "94d3ec7b-eaf8-e2d8-3d49-d20c003b4938",
+                        "name": "neutrinos-redis",
+                        "displayName": "Redis",
+                        "version": "1.0.4",
+                        "username": "david.kirubakaran@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "7.8.0"
+                        },
+                        "description": "Redis client connector",
+                        "pluginImage": "neutrinos-redis-1621923801232.png"
+                    },
+                    "version": "1.0.4"
+                },
+                "2.0.1": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-redis",
+                            "displayName": "Redis",
+                            "packageType": "studio-nodes",
+                            "version": "2.0.1",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "6189ff69-47a2-54d4-9dbc-f0faf16be9db",
+                                        "displayName": "Redis Config",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "4.1.0"
+                                            },
+                                            {
+                                                "name": "connect-redis",
+                                                "version": "6.1.3"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "cf6529b8-ff53-d8f6-7ed3-21afd834adda",
+                                        "displayName": "Redis Operation",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "4.1.0"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "457e59aa-6aee-285c-0168-68e5a2c09f95",
+                                        "displayName": "Redis Subscribe"
+                                    },
+                                    {
+                                        "name": "7fb78023-bae5-1aaa-c077-ad6e3e22d4aa",
+                                        "displayName": "Redis Publish"
+                                    },
+                                    {
+                                        "name": "de94c257-3623-8a27-51d9-eada5d990e2c",
+                                        "displayName": "Redis Session"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "connect-redis": "6.1.3",
+                                "redis": "4.1.0"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "9.1.0"
+                    },
+                    "metadata": {
+                        "devid": "94d3ec7b-eaf8-e2d8-3d49-d20c003b4938",
+                        "name": "neutrinos-redis",
+                        "displayName": "Redis",
+                        "version": "2.0.1",
+                        "username": "david.kirubakaran@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "9.1.0"
+                        },
+                        "description": "Redis client connector",
+                        "pluginImage": "neutrinos-redis-1621923801232.png"
+                    },
+                    "version": "2.0.1"
+                }
+            },
+            "archiveFile": "api/zips/undefined",
+            "guide": "63edfec2ffab5f001ada98e8",
+            "icon": "api/resource/icons/63edfec1ffab5f001ada98de",
+            "screenshots": [
+                "api/resource/screenshots/63edfec1ffab5f001ada98e0",
+                "api/resource/screenshots/63edfec2ffab5f001ada98e2",
+                "api/resource/screenshots/63edfec2ffab5f001ada98e4",
+                "api/resource/screenshots/63edfec2ffab5f001ada98e6"
+            ],
+            "no_of_downloads_by_packages": {
+                "neutrinos-redis": 138
+            },
+            "dependencies": [
+                {
+                    "name": "neutrinos-redis",
+                    "displayName": "Redis",
+                    "packageType": "studio-nodes",
+                    "version": "2.0.1",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "6189ff69-47a2-54d4-9dbc-f0faf16be9db",
+                                "displayName": "Redis Config",
+                                "dependencies": [
+                                    {
+                                        "name": "redis",
+                                        "version": "4.1.0"
+                                    },
+                                    {
+                                        "name": "connect-redis",
+                                        "version": "6.1.3"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "cf6529b8-ff53-d8f6-7ed3-21afd834adda",
+                                "displayName": "Redis Operation",
+                                "dependencies": [
+                                    {
+                                        "name": "redis",
+                                        "version": "4.1.0"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "457e59aa-6aee-285c-0168-68e5a2c09f95",
+                                "displayName": "Redis Subscribe"
+                            },
+                            {
+                                "name": "7fb78023-bae5-1aaa-c077-ad6e3e22d4aa",
+                                "displayName": "Redis Publish"
+                            },
+                            {
+                                "name": "de94c257-3623-8a27-51d9-eada5d990e2c",
+                                "displayName": "Redis Session"
+                            }
+                        ]
+                    },
+                    "packageDependencies": {
+                        "connect-redis": "6.1.3",
+                        "redis": "4.1.0"
+                    }
+                }
+            ]
+        },
+        {
+            "_id": "637f07cb9ae56c8d623f8849",
+            "name": "neutrinos-redis-om",
+            "averageRating": 0,
+            "description": "Redis-om client connector",
+            "displayName": "Redis OM",
+            "lastUpdated": "2022-11-24T05:57:31.409Z",
+            "numberOfDownloads": 0,
+            "packageType": [
+                "studio-nodes"
+            ],
+            "platformSupportVersion": "8.3.0",
+            "pluginImage": "neutrinos-redis-om-1621923801232.png",
+            "publisher": "Neutrinos",
+            "uploadedDate": "2022-11-24T05:57:31.409Z",
+            "username": "avinash.gupta@neutrinos.co",
+            "version": "1.0.0",
+            "versions": {
+                "1.0.0": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-redis-om",
+                            "displayName": "Redis OM",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.0",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "6189ff69-47a2-54d4-9dbc-f0faf16be9dq",
+                                        "displayName": "Redis Config",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "4.1.0"
+                                            },
+                                            {
+                                                "name": "redis-om",
+                                                "version": "0.3.6"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "cf6529b8-ff53-d8f6-7ed3-21afd834addq",
+                                        "displayName": "Redis OM",
+                                        "dependencies": [
+                                            {
+                                                "name": "redis",
+                                                "version": "4.1.0"
+                                            },
+                                            {
+                                                "name": "redis-om",
+                                                "version": "0.3.6"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "redis-om": "0.3.6",
+                                "redis": "4.1.0"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "8.3.0"
+                    },
+                    "metadata": {
+                        "name": "neutrinos-redis-om",
+                        "displayName": "Redis OM",
+                        "version": "1.0.0",
+                        "username": "avinash.gupta@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "8.3.0"
+                        },
+                        "description": "Redis-om client connector",
+                        "pluginImage": "neutrinos-redis-om-1621923801232.png"
+                    },
+                    "version": "1.0.0"
+                }
+            },
+            "archiveFile": "api/zips/undefined",
+            "guide": "637f07cc4c9e6a001953b43e",
+            "icon": "api/resource/icons/637f07cb4c9e6a001953b436",
+            "screenshots": [
+                "api/resource/screenshots/637f07cb4c9e6a001953b438",
+                "api/resource/screenshots/637f07cc4c9e6a001953b43a",
+                "api/resource/screenshots/637f07cc4c9e6a001953b43c"
+            ],
+            "no_of_downloads_by_packages": {
+                "neutrinos-redis-om": 53
+            },
+            "dependencies": [
+                {
+                    "name": "neutrinos-redis-om",
+                    "displayName": "Redis OM",
+                    "packageType": "studio-nodes",
+                    "version": "1.0.0",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "6189ff69-47a2-54d4-9dbc-f0faf16be9dq",
+                                "displayName": "Redis Config",
+                                "dependencies": [
+                                    {
+                                        "name": "redis",
+                                        "version": "4.1.0"
+                                    },
+                                    {
+                                        "name": "redis-om",
+                                        "version": "0.3.6"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "cf6529b8-ff53-d8f6-7ed3-21afd834addq",
+                                "displayName": "Redis OM",
+                                "dependencies": [
+                                    {
+                                        "name": "redis",
+                                        "version": "4.1.0"
+                                    },
+                                    {
+                                        "name": "redis-om",
+                                        "version": "0.3.6"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "packageDependencies": {
+                        "redis-om": "0.3.6",
+                        "redis": "4.1.0"
+                    }
+                }
+            ]
+        }
+    ]
+}
